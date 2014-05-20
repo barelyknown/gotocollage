@@ -43,7 +43,7 @@ class Filter
   end
 
   def not_quoted?
-    tweet.text =~/\A[^'"]/
+    tweet.text =~/\A[^'"“]/
   end
 
 end
