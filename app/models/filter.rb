@@ -28,13 +28,13 @@ class Filter
 
   def excludes_swears?
     SWEARS.none? do |swear|
-      tweet.text =~ /#{swear}/
+      tweet.text =~ /#{swear}/i
     end
   end
 
   def excludes_slurs?
     SLURS.none? do |slur|
-      tweet.text =~ /#{slur}/
+      tweet.text =~ /#{slur}/i
     end
   end
 

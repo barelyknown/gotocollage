@@ -14,14 +14,14 @@ describe Filter do
 
   it 'filters tweets that include profanity' do
     Filter::SWEARS.each do |swear|
-      tweet = double(Twitter::Tweet, text: "go to collage #{swear}")
+      tweet = double(Twitter::Tweet, text: "go to collage #{swear.upcase}")
       expect(described_class.new(tweet)).to be_filter
     end
   end
 
   it 'filters tweets that include anything racial' do
     Filter::SLURS.each do |slur|
-      tweet = double(Twitter::Tweet, text: "go to collage #{slur}")
+      tweet = double(Twitter::Tweet, text: "go to collage #{slur.upcase}")
       expect(described_class.new(tweet)).to be_filter
     end
   end
