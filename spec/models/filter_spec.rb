@@ -31,4 +31,11 @@ describe Filter do
     expect(described_class.new(tweet)).to be_filter
   end
 
+  it 'filters tweets that start with quotes' do
+    %w(' ").each do |q|
+      tweet = double(Twitter::Tweet, text: "#{q}go to collage'")
+      expect(described_class.new(tweet)).to be_filter
+    end
+  end
+
 end

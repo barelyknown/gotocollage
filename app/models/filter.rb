@@ -14,6 +14,7 @@ class Filter
     return true unless excludes_swears?
     return true unless excludes_slurs?
     return true unless not_retweeted_old_school_style?
+    return true unless not_quoted?
     false
   end
 
@@ -39,6 +40,10 @@ class Filter
 
   def not_retweeted_old_school_style?
     tweet.text =~ /\A[^r][^t]/i
+  end
+
+  def not_quoted?
+    tweet.text =~/\A[^'"]/
   end
 
 end
