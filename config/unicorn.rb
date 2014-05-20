@@ -17,7 +17,7 @@ after_fork do |server, worker|
     puts 'Unicorn worker intercepting TERM and doing nothing. Wait for master to send QUIT'
   end
 
-  @worker_pid = spawn('bundle exec sidekiq')
+  @worker_pid = spawn('bundle exec sidekiq -c 3')
   t = Thread.new {
     Process.wait(@worker_pid)
     puts "Worker died. Bouncing unicorn."
