@@ -2,8 +2,16 @@ require 'spec_helper'
 
 describe Filter do
 
+  let(:safe_tweet) do
+    double(Twitter::Tweet, text: 'go to collage', user: safe_user)
+  end
+
   let(:safe_user) do
     double(Twitter::User, name: 'Hello Kitty', screen_name: 'hello_kitty')
+  end
+
+  it 'does not filter a safe tweet from a safe user' do
+    expect(described_class.new(safe_tweet)).to_not be_filter
   end
 
   it "filters tweets that do not say 'go to collage'" do

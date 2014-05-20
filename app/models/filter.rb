@@ -26,7 +26,7 @@ class Filter
   end
 
   def excludes_profanity?
-    (SWEARS + SLURS).none? do |profanity|
+    (SWEARS + SLURS).all? do |profanity|
       [tweet.text, tweet.user.name, tweet.user.screen_name].none? do |attribute|
         attribute =~ /#{profanity}/i
       end
