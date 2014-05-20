@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'unicorn'
 gem 'sidekiq'
+gem 'twitter'
 
 # waiting for new version to be released for this patch
 # https://github.com/tobiassvn/sidetiq/pull/80
@@ -20,6 +21,11 @@ gem 'dotenv-rails'
 
 group :development do
   gem 'spring'
+end
+
+group :development, :test do
+  gem 'rspec-rails', github: 'rspec/rspec-rails'
+  gem 'spring-commands-rspec'
 end
 
 group :production do
