@@ -5,11 +5,7 @@ class TweetSearchingWorker
   recurrence { minutely }
 
   def perform
-    maximum = Searcher::MAX_PER_FIFTEEN_MINUTES - 40 #buffer
-    now = Time.now.utc.to_i
-    fifteen_minutes_ago = Time.now.utc.advance(minutes: -15).to_i
-    recent = REDIS.zrangebyscore(Searcher::SEARCHES_SET_KEY, fifteen_minutes_ago, now).size
-    remaining = maximum - recent
+    remaining = 5
 
     while remaining > 0
       remaining -= 1
