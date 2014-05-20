@@ -1,5 +1,5 @@
 namespace :assets do
-  namespace :precompile => :environment do
+  task :precompile => :environment do
     puts 'precompiling!!!!!!!'
   end
 end
