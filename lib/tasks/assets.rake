@@ -1,5 +1,5 @@
 namespace :assets do
   task :precompile => :environment do
-    puts 'precompiling!!!!!!!'
+    puts ENV['DATABASE_URL']
   end
 end
