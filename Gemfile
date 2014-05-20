@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'unicorn'
 gem 'sidekiq'
 gem 'twitter'
+gem 'http'
 
 # waiting for new version to be released for this patch
 # https://github.com/tobiassvn/sidetiq/pull/80
