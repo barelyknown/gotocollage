@@ -1,5 +1,5 @@
 class Filter
-  SWEARS = %w(shit fuck ass dick cunt pussy)
+  SWEARS = %w(shit fuck ass dick cunt pussy bitch)
   SLURS = %w(fag gay homo nigga nigger nig)
 
   attr_reader :tweet
