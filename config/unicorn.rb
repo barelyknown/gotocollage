@@ -25,12 +25,5 @@ after_fork do |server, worker|
   }
   t.abort_on_exception = true
 
-  Sidekiq.configure_client do |config|
-    config.redis = { :size => 1, :url => ENV['REDIS_URL'], :namespace => "gotocollage_#{Rails.env}" }
-  end
-  Sidekiq.configure_server do |config|
-    config.redis = { :size => 5, :url => ENV['REDIS_URL'], :namespace => "gotocollage_#{Rails.env}" }
-  end
-
   ActiveRecord::Base.establish_connection
 end
