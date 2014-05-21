@@ -20,6 +20,7 @@ class TweetRetweetingWorker
         no_more_tweets = true
       end
     end
+  rescue Twitter::Error::NotFound
   end
 
 end
