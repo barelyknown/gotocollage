@@ -11,6 +11,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'unicorn'
 gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', :require => nil
+
 gem 'twitter'
 gem 'http'
 
