@@ -20,7 +20,7 @@ after_fork do |server, worker|
   @worker_pid = spawn('bundle exec sidekiq -c 3')
   t = Thread.new {
     Process.wait(@worker_pid)
-    puts "Worker died. Bouncing unicorn."
+    puts "Worker died. Bouncing server."
     Process.kill 'QUIT', Process.pid
   }
   t.abort_on_exception = true
